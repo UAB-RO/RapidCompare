@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Company>The University of Alabama at Birmingham</Company>
+    <Authors>Richard Popple</Authors>
+    <AssemblyName>UABRO.RapidCompare.Reporting</AssemblyName>
+    <RootNamespace>UABRO.RapidCompare.Reporting</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PdfSharp.MigraDoc.Standard" Version="1.51.15" />
+    <PackageReference Include="ScottPlot" Version="4.0.48" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UABRO.RapidCompare.Analysis\UABRO.RapidCompare.Analysis.csproj" />
+    <ProjectReference Include="..\UABRO.RapidCompare.Model\UABRO.RapidCompare.Model.csproj" />
+  </ItemGroup>
+
+</Project>

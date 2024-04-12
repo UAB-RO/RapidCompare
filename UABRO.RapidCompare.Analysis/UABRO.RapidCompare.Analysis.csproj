@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>UABRO.RapidCompare.Analysis</AssemblyName>
+    <RootNamespace>UABRO.RapidCompare.Analysis</RootNamespace>
+    <Company>The University of Alabama at Birmingham</Company>
+    <Authors>Richard Popple</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="alglib.net" Version="3.17.0" />
+    <PackageReference Include="MathNet.Numerics" Version="4.15.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UABRO.RapidCompare.Model\UABRO.RapidCompare.Model.csproj" />
+  </ItemGroup>
+
+</Project>
