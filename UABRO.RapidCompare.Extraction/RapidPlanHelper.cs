@@ -8,7 +8,7 @@ using VMS.TPS.Common.Model.Types;
 
 namespace UABRO.RapidCompare.Extraction
 {
-    class RapidPlanHelper
+    public static class RapidPlanHelper
     {
         public static string PlanningDataBaseServer;
         /// <summary>
