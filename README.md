@@ -10,6 +10,12 @@ This repository contains two applications, RapidPlanComparisonPlanExtractionCons
 
 The console application RapidPlanComparisonPlanExtractionConsole automatically creates RapidPlan plans for a specified model based on reference plans. It extracts dosimetric data for the RapidPlan and reference plans and saves the results to a JSON file.
 
+The location of the RapidPlan model database is hard coded in the console application file `Program.cs`. The line
+
+    RapidPlanHelper.PlanningDataBaseServer = "change_to_rapidplan_db_server"; // change this string to the name of the server where the RapidPlan database is located, typically the Aria SQL server.
+    
+should be changed to the name of the server hosting the RapidPlan model database, which is typically the Aria database server.
+
 #### Input
 
 The input to the automated planning tool is a tab delimited text file. It is comprised of three groups of rows, a section defining the RapidPlan model and calculation options, a single row defining the model structures, and a list of reference plans with the mapping of structure IDs to model structures. The tool copies the reference plan, sets the calculation options, applies the RapidPlan, and then optimizes and calculates the result.
