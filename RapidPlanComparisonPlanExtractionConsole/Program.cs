@@ -104,8 +104,8 @@ namespace RapidPlanComaprisonPlanExtractionConsole
 
             // Get model information
             var rapidPlanModelDvhSet = new RapidPlanModelDvhSet();
-            string rapidPlanDbServer = "ariaprsql1"; // ariaprsql1 for production, ECS848 for test
-            rapidPlanModelDvhSet.RapidPlanModel = Helpers.GetModelDescriptionFromRapidPlanDatabase(worklist.Select(w => w.RapidPlanModelId).Distinct().Single(),rapidPlanDbServer);
+            RapidPlanHelper.PlanningDataBaseServer = "ariaprsql1"; // change this string to the name of the server where the RapidPlan database is located
+            rapidPlanModelDvhSet.RapidPlanModel = Helpers.GetModelDescriptionFromRapidPlanDatabase(worklist.Select(w => w.RapidPlanModelId).Distinct().Single());
             var rapidPlanModelStructureNames = rapidPlanModelDvhSet.RapidPlanModel.ModelStructures.Select(m => m.Name).ToList();
             
             var modelStructureMatchModelNames = worklist.SelectMany(w => w.ModelStructureMatches.Values).Distinct().ToList();

@@ -11,9 +11,9 @@ namespace UABRO.RapidCompare.Extraction
 {
     public static class Helpers
     {
-        public static RapidPlanModelDescription GetModelDescriptionFromRapidPlanDatabase(string modelId,string server="ariaprsql1")
+        public static RapidPlanModelDescription GetModelDescriptionFromRapidPlanDatabase(string modelId)
         {
-            var planningModelDataBase = new PlanningModelQ.PM(server);
+            var planningModelDataBase = new PlanningModelQ.PM(RapidPlanHelper.PlanningDataBaseServer);
             var ids = planningModelDataBase.PlanningModels.Select(pm => pm.DisplayName).ToList();
             var modelQ = planningModelDataBase.PlanningModels.Where(pm => pm.DisplayName == modelId);
             if (modelQ.Count() == 0)
@@ -49,7 +49,6 @@ namespace UABRO.RapidCompare.Extraction
                 model.ModelStructures.Add(modelStructure);
             }
 
-            RapidPlanHelper.PlanningDataBaseServer = server;
             var xdoc = RapidPlanHelper.GetObjectiveTemplate(modelId);
             model.NormalTissueObjective = RapidPlanHelper.GetNormalTissueObjective(xdoc);
             model.ImrtSmoothing = RapidPlanHelper.GetImrtSmoothing(xdoc);
